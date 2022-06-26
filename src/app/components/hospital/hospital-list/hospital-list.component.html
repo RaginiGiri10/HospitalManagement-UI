@@ -1,0 +1,57 @@
+<div [class]="messageClass" *ngIf="!isHospitalsAvailable">
+    {{message}}
+</div>
+
+
+    <h4><i>Patient Details</i></h4>
+    <hr/>
+    <table class="table"  class="centerTable" class="mytable" *ngIf="isHospitalsAvailable">
+        <thead >
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Department</th>
+                <th>Doctor Name</th>
+                <th>Doctor Fee</th>
+                <th>RegisterDate</th>
+                <th>CreatedBy</th>
+                
+
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngIf="hospitalList.length>0" >
+                <tr *ngFor="let hospital of hospitalList">
+                    <td>{{hospital.id}}</td>
+                    <td>{{hospital.patientName}}</td>
+                    <td>{{hospital.patientAge}}</td>
+                    <td>{{hospital.patientGender}}</td>
+                    <td>{{hospital.department}}</td>
+                    <td>{{hospital.doctorName}}</td>
+                    <td>{{hospital.doctorFee}}</td>
+                    <td>{{hospital.registerDate}}</td>
+                    <td>{{hospital.createdBy}}</td>
+                    <td>
+                        <button class="btn-primary" (click)="editPatient(hospital.id)" >Edit</button>
+                    </td>
+
+                    <td>
+                        <button class="btn-danger" (click)="deletePatient(hospital.id)" >Delete</button>
+                    </td>
+
+                    </tr>
+            </ng-container>
+    
+            <tr *ngIf="hospitalList.length==0">
+                <td colspan="7">
+                    No records found
+                </td>
+            </tr>
+           
+        </tbody>
+    </table>
+
+
+

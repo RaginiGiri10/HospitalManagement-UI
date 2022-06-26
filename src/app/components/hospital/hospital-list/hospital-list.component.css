@@ -1,0 +1,22 @@
+table{
+    width: 95%;
+   
+    margin-left: auto;
+    margin-right: auto;
+    
+   
+}
+.mytable td{
+    border: 1px solid #ccc;
+    padding:10px;
+  }
+  .mytable th{
+    border: 1px solid #ccc;
+    padding:10px;
+  }
+h4{
+    text-align: center;
+}
+.centerTable { margin: 0px auto; }
+
+

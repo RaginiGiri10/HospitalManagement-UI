@@ -1,0 +1,65 @@
+<body  style="background-color: #c9dfe0">
+<form #editPatientForm="ngForm" (ngSubmit)="updatePatient()">
+    <div class="mb-3 mt-3">
+      <label for="patientName" class="form-label">PatientName:</label>
+      <input type="text" class="form-control" [class.hasError]="patientName.invalid && patientName.touched" id="patientName"      
+       name="patientName"
+       [(ngModel)]="editpatient.patientName" 
+       required
+       #patientName="ngModel">
+       <p class="text-danger" *ngIf="patientName.invalid && patientName.touched">Patient Name is mandatory</p>       
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="patientAge" class="form-label">PatientAge:</label>
+      <input type="number" class="form-control" [class.hasError]="patientAge.invalid && patientAge.touched" id="patientAge"      
+       name="patientAge"
+       [(ngModel)]="editpatient.patientAge" 
+       required
+       #patientAge="ngModel">
+       <p class="text-danger" *ngIf="patientAge.invalid && patientAge.touched">Patient age is mandatory</p>       
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="patientGender" class="form-label">PatientGender:</label>
+      <input type="text" class="form-control" [class.hasError]="patientGender.invalid && patientGender.touched" id="patientGender"      
+       name="patientGender"
+       [(ngModel)]="editpatient.patientGender" 
+       required
+       #patientGender="ngModel">
+       <p class="text-danger" *ngIf="patientGender.invalid && patientGender.touched">Patient gender is mandatory</p>       
+    </div>
+    <div class="mb-3">
+      <label for="departmentId" patientCategoryIdclass="form-label">Department Category</label>
+      <select class="form-select" name="departmentId"
+      id="departmentId"
+      [(ngModel)]="editpatient.departmentId"
+      #patientCategoryId="ngModel" >>
+      <option [value]="category.departmentId" *ngFor="let category of editpatient.departmentList">
+     {{category.departmentName}}
+      </option>
+      </select>
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="doctorName" class="form-label">DoctorName:</label>
+      <input type="text" class="form-control" [class.hasError]="doctorName.invalid && doctorName.touched" id="doctorName"      
+       name="doctorName"
+       [(ngModel)]="editpatient.doctorName" 
+       required
+       #doctorName="ngModel">
+       <p class="text-danger" *ngIf="doctorName.invalid && doctorName.touched">Doctor name is mandatory</p>       
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="doctorFee" class="form-label">DoctorFee:</label>
+      <input type="number" class="form-control" [class.hasError]="doctorFee.invalid && doctorFee.touched" id="doctorFee"      
+       name="doctorFee"
+       [(ngModel)]="editpatient.doctorFee" 
+       required
+       #doctorFee="ngModel">
+       <p class="text-danger" *ngIf="doctorFee.invalid && doctorFee.touched">Doctor fee is mandatory</p>       
+    </div>
+<button type="submit" class="btn btn-primary" >Edit</button>
+<span class="gap"></span>
+<a class="btn btn-danger" [routerLink]="['/hospitals']">Cancel</a>
+  </form>
+</body>
+
+

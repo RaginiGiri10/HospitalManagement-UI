@@ -1,0 +1,17 @@
+.hasError{
+    border:1px solid red;
+}
+form {
+    text-align: center;
+    width: 400px;
+    margin-left: 400px;
+}
+body{
+    background-image:url('https://images.pexels.com/photos/3873176/pexels-photo-3873176.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); 
+   background-repeat: no-repeat;
+   background-size: cover 
+      
+}
+.gap{
+    margin-right: 0.5rem;
+}
